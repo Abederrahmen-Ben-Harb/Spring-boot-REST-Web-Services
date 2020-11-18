@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<link rel="stylesheet" type="text/css"
+href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<script src="webjars/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript"
+src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<head>
+<meta charset="windows-1256">
+<title>Modifier une Voiture</title>
+</head>
+<body>
+<form action="updateVoiture" method="post">
+<pre>
+id : <input type="text" name="idVoiture" value="${voiture.idVoiture}">
+marque Voiture :<input type="text" name="marqueVoiture" value="${voiture.marqueVoiture}">
+prix Parking :<input type="text" name="prixParking" value="${voiture.prixParking}">
+Date arrive :
+<fmt:formatDate pattern="yyyy-MM-dd" value="${voiture.dateArrive}" var="formatDate" />
+<input type="date" name="date" value="${formatDate}"></input>
+Date sortie :
+<fmt:formatDate pattern="yyyy-MM-dd" value="${voiture.dateSortie}" var="formatDate" />
+<input type="date" name="date" value="${formatDate}"></input>
+<input type="submit" value="Modifier">
+</pre>
+</form>
+<br/>
+<br/>
+<a href="ListeVoitures">Liste Voitures</a>
+</body>
+</html>
